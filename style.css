@@ -188,7 +188,7 @@ footer.darkmode {
 }
 
 .google-logo.darkmode {
-  content: url("/images/googlelogo_light.png");
+  content: url("images/googlelogo_light.png");
 }
 
 .search-icon {
