@@ -8,11 +8,20 @@ const settingsDarkModeIcon = document.querySelector(".settings-dark-mode-icon");
 const settingsLastItem = document.querySelector(
   ".settings-container li:last-child"
 );
+const searchForm = document.querySelector(".search-form");
+const query = document.getElementById("query");
+const googleSearchButton = document.querySelector(".google-search");
+const googleLuckyButton = document.querySelector(".google-lucky");
 
 const state = {
   darkMode: false,
   settingsShown: false,
 };
+
+function init() {
+  query.value = "";
+}
+init();
 
 settingsButton.addEventListener("click", (e) => {
   e.preventDefault;
@@ -74,3 +83,19 @@ function changeLightDarkMode() {
     document.querySelector(".dark-light-text").textContent = "Dark theme: OFF";
   }
 }
+
+function googleSearch(e) {
+  e.preventDefault;
+  window.location = "http://www.google.com/search?q=" + query.value;
+}
+
+function googleLucky(e) {
+  console.log("google lucky");
+  e.preventDefault;
+  window.location = `http://www.google.com/search?hl=en&q=${query.value}&btnI=I`;
+}
+
+searchForm.addEventListener("submit", googleSearch);
+
+googleSearchButton.addEventListener("click", googleSearch);
+googleLuckyButton.addEventListener("click", googleLucky);
