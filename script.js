@@ -8,10 +8,16 @@ const settingsDarkModeIcon = document.querySelector(".settings-dark-mode-icon");
 const settingsLastItem = document.querySelector(
   ".settings-container li:last-child"
 );
+
 const searchForm = document.querySelector(".search-form");
 const query = document.getElementById("query");
 const googleSearchButton = document.querySelector(".google-search");
 const googleLuckyButton = document.querySelector(".google-lucky");
+
+const googleAppsContainerButton = document.querySelector(
+  ".google-apps-container-button"
+);
+const gAppsContainer = document.querySelector(".g-apps-container");
 
 const state = {
   darkMode: false,
@@ -33,6 +39,12 @@ settingsButton.addEventListener("click", (e) => {
     state.settingsShown = false;
   }
 });
+
+googleAppsContainerButton.addEventListener("click", (e) => {
+  console.log("clicked");
+  gAppsContainer.style.display = "flex";
+});
+
 const showAndHideDarkLightTheme = function (e) {
   if (state.darkMode === false) {
     settingsLightModeIcon.style.display = "inline-block";
@@ -56,7 +68,15 @@ hideDarkLightTheme();
 document.addEventListener("click", (e) => {
   if (e.target.closest(".settings-button") === settingsButton) return;
   if (e.target.closest(".settings-container") === settingsContainer) return;
+  if (e.target.closest(".g-apps-container") === googleAppsContainerButton)
+    return;
+  if (
+    e.target.closest(".google-apps-container-button") ===
+    googleAppsContainerButton
+  )
+    return;
 
+  gAppsContainer.style.display = "none";
   settingsContainer.style.display = "none";
   state.settingsShown = false;
 });

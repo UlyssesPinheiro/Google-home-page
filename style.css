@@ -87,33 +87,6 @@ footer.darkmode {
 } */
 
 /* HEADER */
-.google-apps {
-  opacity: 70%;
-}
-
-.google-apps.darkmode {
-  fill: white;
-  opacity: 90%;
-}
-
-.google-apps-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 25px;
-  height: 40px;
-  width: 40px;
-  padding: 7px;
-}
-
-.google-apps-container:hover {
-  background-color: rgb(233, 233, 233);
-}
-
-.google-apps-container.darkmode:hover {
-  background-color: var(--dark-background-color4);
-}
-
 .sign-in-button {
   color: white;
   border: none;
@@ -130,6 +103,66 @@ footer.darkmode {
   background-color: #2e84f3;
   width: 95px;
   height: 100%;
+}
+
+.sign-in-button.darkmode {
+  background-color: #8ab4f8;
+  color: black;
+}
+.sign-in-button.darkmode:hover {
+  background-color: #a6c5f6;
+}
+
+/* GOOGLE APPS CONTAINER */
+
+.google-apps {
+  opacity: 70%;
+}
+
+.google-apps.darkmode {
+  fill: white;
+  opacity: 90%;
+}
+
+.google-apps-container-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  height: 40px;
+  width: 40px;
+  padding: 7px;
+}
+
+.google-apps-container-button:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+.google-apps-container-button.darkmode:hover {
+  background-color: var(--dark-background-color4);
+}
+
+.g-apps-container {
+  /* display: flex; */
+  display: none;
+  position: absolute;
+  top: 60px;
+  width: 320px;
+  background-color: white;
+  padding: 20px 0;
+  justify-content: center;
+  gap: 30px;
+  border-radius: 10px;
+  filter: drop-shadow(0 2px 3px #0000005d);
+  flex-wrap: wrap;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
 }
 
 /* CENTER CONTAINER */
@@ -155,7 +188,7 @@ footer.darkmode {
 }
 
 .google-logo.darkmode {
-  content: url("https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png");
+  content: url("/images/googlelogo_light.png");
 }
 
 .search-icon {
@@ -205,6 +238,7 @@ footer.darkmode {
   width: 100%;
   font-size: 1rem;
   border: transparent;
+  background-color: transparent;
 }
 #query:focus {
   outline: none;
