@@ -105,13 +105,14 @@ function changeLightDarkMode() {
 }
 
 function googleSearch(e) {
-  e.preventDefault;
+  e.preventDefault();
+  console.log("search function called");
   window.location = "http://www.google.com/search?q=" + query.value;
 }
 
 function googleLucky(e) {
-  console.log("google lucky");
-  e.preventDefault;
+  // console.log("google lucky");
+  e.preventDefault();
   window.location = `http://www.google.com/search?hl=en&q=${query.value}&btnI=I`;
 }
 
